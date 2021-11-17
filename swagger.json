@@ -1,0 +1,29 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API",
+    "description": "API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3030",
+  "basePath": "/",
+  "schemes": ["http", "https"],
+  "server": {
+    "url": "http://localhost:3030",
+    "description": "Local server"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Home"],
+        "summary": "Welcome API",
+        "description": "Welcome API",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
