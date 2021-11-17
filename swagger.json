@@ -5,13 +5,16 @@
     "description": "API",
     "version": "1.0.0"
   },
-  "host": "localhost:3030",
-  "basePath": "/",
-  "schemes": ["http", "https"],
-  "server": {
-    "url": "http://localhost:3030",
-    "description": "Local server"
-  },
+  "server": [
+      {
+        "url": "http://localhost:3030",
+        "description": "Local server"
+      },
+      {
+        "url": "https://portifolio-api.herokuapp.com/",
+        "description": "Production"
+      }
+  ],
   "paths": {
     "/": {
       "get": {
