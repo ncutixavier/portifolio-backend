@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "API",
-    "description": "API",
+    "title": "Portifolio API",
+    "description": "Portifolio API Documentation",
     "version": "1.0.0"
   },
   "server": [
@@ -21,6 +21,39 @@
         "tags": ["Home"],
         "summary": "Welcome API",
         "description": "Welcome API",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get all projects",
+        "description": "Get all projects",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/projects/{id}": {
+      "get": {
+        "tags": ["Projects"],
+        "summary": "Get project by id",
+        "description": "Get project by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success"

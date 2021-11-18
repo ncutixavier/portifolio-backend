@@ -5,6 +5,8 @@ const swaggerUi = require('swagger-ui-express');
 const morgan = require('morgan');
 const errorhandler = require('errorhandler');
 const swaggerDocument = require('./swagger.json');
+const apiRouter = require('./routes/api');
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -19,8 +21,9 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api', apiRouter);
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

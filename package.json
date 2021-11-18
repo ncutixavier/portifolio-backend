@@ -4,8 +4,14 @@
   "description": "Portifolio Backend",
   "main": "server.js",
   "scripts": {
-    "test": "nyc mocha ./test/* --timeout 10000 --exit",
-    "dev": "nodemon server.js"
+    "test": "nyc mocha ./test/*.spec.js --timeout 1500000",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "migrate": "node migration.js",
+    "reset": "node reset.js",
+    "seed": "node seed.js",
+    "seeding": "npm run reset && npm run migrate && npm run seed",
+    "coverage": "npm run test && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -24,6 +30,7 @@
     "body-parser": "^1.19.0",
     "chai": "^4.1.2",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "mocha": "^3.5.3",
