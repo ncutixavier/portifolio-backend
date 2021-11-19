@@ -9,10 +9,10 @@ db.get(
     }
     if (table) {
       db.run(
-        `INSERT INTO Project (name, description, category, technologies, link) VALUES ('Project 1', 'Description 1', 'Category 1', 'Technology 1', 'Link 1')`
+        `INSERT INTO Project (name, description, category, technologies, link, github_url) VALUES ('Project 1', 'De, github_urlscription 1', 'Category 1', 'Technology 1', 'Link 1', 'github_url 1')`
       );
       db.run(
-        `INSERT INTO Project (name, description, category, technologies, link) VALUES ('Project 2', 'Description 2', 'Category 2', 'Technology 2', 'Link 2')`
+        `INSERT INTO Project (name, description, category, technologies, link, github_url) VALUES ('Project 2', 'Description 2', 'Category 2', 'Technology 2', 'Link 2', 'github_url 2')`
       );
     }
   }

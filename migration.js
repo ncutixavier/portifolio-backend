@@ -1,5 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./db/database.sqlite')
+const db = new sqlite3.Database(
+  process.env.TEST_DATABASE || './db/database.sqlite'
+);
 
 db.serialize(() => {
     db.run(`
@@ -9,7 +11,8 @@ db.serialize(() => {
             description TEXT NOT NULL,
             category TEXT NOT NULL,
             technologies TEXT NOT NULL,
-            link TEXT NOT NULL
+            link TEXT NOT NULL,
+            github_url TEXT NOT NULL
         )
     `)
 });

@@ -38,6 +38,27 @@
             "description": "Success"
           }
         }
+      },
+      "post": {
+        "tags": ["Projects"],
+        "summary": "Create a new project",
+        "description": "Create a new project",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Project object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     },
     "/api/projects/{id}": {
@@ -58,6 +79,78 @@
           "200": {
             "description": "Success"
           }
+        }
+      },
+      "put": {
+        "tags": ["Projects"],
+        "summary": "Update project by id",
+        "description": "Update project by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Project object that needs to be updated in the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/project"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Projects"],
+        "summary": "Delete project by id",
+        "description": "Delete project by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Project id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "project": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "technologies": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        },
+        "github_url": {
+          "type": "string"
         }
       }
     }
